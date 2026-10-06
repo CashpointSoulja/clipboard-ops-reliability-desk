@@ -4,7 +4,8 @@ import { mkdirSync } from "node:fs";
 
 const BASE = process.env.BASE_URL || "http://127.0.0.1:8787";
 const SHOTS = process.env.SHOTS_DIR || "docs/evidence/e2e";
-const CHROME = process.env.CHROME_PATH || "/opt/.devin/chrome/chrome/linux-137.0.7118.2/chrome-linux64/chrome";
+const CHROME = process.env.CHROME_PATH; // path to a local Chrome/Chromium binary
+if (!CHROME) throw new Error("Set CHROME_PATH to a Chrome or Chromium executable");
 mkdirSync(SHOTS, { recursive: true });
 
 const results = [];

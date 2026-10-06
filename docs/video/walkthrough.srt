@@ -1,0 +1,116 @@
+1
+00:00:00,450 --> 00:00:04,911
+This is Ops Reliability Desk, an independent concept by Ayo Ahmed.
+
+2
+00:00:04,961 --> 00:00:07,372
+It is not affiliated with Clipboard.
+
+3
+00:00:07,422 --> 00:00:13,660
+Every case is synthetic, every connector is simulated, and state lives only in this browser.
+
+4
+00:00:14,215 --> 00:00:15,396
+First, a bad file.
+
+5
+00:00:15,446 --> 00:00:18,063
+Validation is deterministic and atomic.
+
+6
+00:00:18,113 --> 00:00:23,465
+Each row error names the column, the code and the fix, and nothing is imported.
+
+7
+00:00:24,470 --> 00:00:29,527
+Now the sample export: seventeen synthetic cases from workplaces and workers.
+
+8
+00:00:29,577 --> 00:00:31,716
+Eleven describe the same symptom.
+
+9
+00:00:31,766 --> 00:00:33,640
+Shift status is not updating.
+
+10
+00:00:34,393 --> 00:00:40,683
+Deterministic rules group them into one owned incident, linked to the shift events webhook that failed ten times.
+
+11
+00:00:41,986 --> 00:00:50,466
+Each case shows the source of truth beside the displayed status, data freshness, the affected workflow, the next step, and six risk gates.
+
+12
+00:00:52,728 --> 00:00:53,956
+Here is a refusal.
+
+13
+00:00:54,006 --> 00:00:55,731
+One case has no shift ID.
+
+14
+00:00:55,781 --> 00:00:58,145
+Another's source is six hours old.
+
+15
+00:00:58,195 --> 00:01:00,700
+The desk will not repair either one.
+
+16
+00:01:00,750 --> 00:01:04,108
+It hands them to the on-call role, with context.
+
+17
+00:01:04,863 --> 00:01:07,495
+The operator approves one reversible re-sync.
+
+18
+00:01:07,545 --> 00:01:12,203
+Evidence is read again first, and only shifts that pass every gate are written.
+
+19
+00:01:12,706 --> 00:01:15,168
+Every write carries an idempotency key.
+
+20
+00:01:15,218 --> 00:01:16,971
+One shift recovers on retry.
+
+21
+00:01:17,021 --> 00:01:20,900
+Another fails three times and moves to the dead-letter queue.
+
+22
+00:01:20,950 --> 00:01:22,446
+Nothing is half applied.
+
+23
+00:01:23,204 --> 00:01:25,938
+Verification fails while the queue is open.
+
+24
+00:01:25,988 --> 00:01:31,054
+Once the simulated upstream recovers, replay applies the same key exactly once.
+
+25
+00:01:35,836 --> 00:01:42,946
+A fresh read now matches six of six, so the incident is resolved, and exported as a spec and a regression case.
+
+26
+00:01:45,689 --> 00:01:49,273
+Billing, credential and trust cases are never auto-decided.
+
+27
+00:01:49,323 --> 00:01:52,599
+They go to named specialist roles, and no money moves.
+
+28
+00:01:53,353 --> 00:01:58,205
+Metrics here are illustrative synthetic counts, not claims about real results.
+
+29
+00:01:58,255 --> 00:02:00,593
+Reset restores the sample at any time.
+

@@ -146,13 +146,13 @@ function detail() {
     const refused = !e.eligible && !noDrift;
     return `<details class="case ${e.eligible ? "eligible" : noDrift ? "" : "refused"}" ${refused ? "open" : ""} aria-label="Case ${e.case_id}">
       <summary><strong>${e.case_id}</strong> <span class="badge neu">${c.side}</span> <span class="badge ${e.eligible ? "ok" : noDrift ? "neu" : "blk"}">${e.eligible ? "Eligible" : noDrift ? "No drift" : "Repair refused"}</span>
-        <span class="cline">${esc(e.shift_id || "no shift_id")} · shown “${esc(e.projection?.status ?? "—")}” vs ledger “${esc(e.ledger?.status ?? "—")}” · ${mins(e.source_age_ms)} old · gates ${gatesPassed}/6</span></summary>
+        <span class="cline">${esc(e.shift_id || "no shift_id")} · shown “${esc(e.projection?.status ?? "—")}” vs ledger “${esc(e.ledger?.status ?? "—")}” · ${e.ledger ? `${mins(e.source_age_ms)} old` : "no source read"} · gates ${gatesPassed}/6</span></summary>
       <p class="sum">“${esc(c.summary)}” <span class="muted">via ${esc(c.source_system)} at ${hhmm(c.created_at)}</span></p>
       <div class="ev">
         <div><b>Shift</b>${esc(e.shift_id || "absent")}</div>
         <div><b>Ledger (source)</b>${e.ledger ? `${esc(e.ledger.status)} · seq ${e.ledger.seq}` : "—"}</div>
         <div><b>Projection (shown)</b>${e.projection ? `${esc(e.projection.status)} · seq ${e.projection.seq}` : "—"}</div>
-        <div><b>Data freshness</b>${mins(e.source_age_ms)} old · read ${hhmm(e.read_at)}</div>
+        <div><b>Data freshness</b>${e.ledger ? `${mins(e.source_age_ms)} old · read ${hhmm(e.read_at)}` : "n/a: no shift to read"}</div>
         <div><b>Affected workflow</b>${esc(inc.affected_workflow)}</div>
       </div>
       <div class="gates" aria-label="Risk gates">${e.gates.map((g) => `<span class="badge ${g.pass ? "ok" : "blk"}" title="${esc(g.detail)}">${g.pass ? "✓" : "✕"} ${g.id.replace(/_/g, " ").toLowerCase()}</span>`).join("")}</div>

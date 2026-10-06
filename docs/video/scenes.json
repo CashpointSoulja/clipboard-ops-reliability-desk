@@ -1,0 +1,14 @@
+[
+ {"id":"s01","title":"Intro","vo":"This is Ops Reliability Desk, an independent concept by Ayo Ahmed. It is not affiliated with Clipboard. Every case is synthetic, every connector is simulated, and state lives only in this browser."},
+ {"id":"s02","title":"Malformed upload","vo":"First, a bad file. Validation is deterministic and atomic. Each row error names the column, the code and the fix, and nothing is imported."},
+ {"id":"s03","title":"Sample upload","vo":"Now the sample export: seventeen synthetic cases from workplaces and workers. Eleven describe the same symptom. Shift status is not updating."},
+ {"id":"s04","title":"Owned incident","vo":"Deterministic rules group them into one owned incident, linked to the shift events webhook that failed ten times."},
+ {"id":"s05","title":"Evidence","vo":"Each case shows the source of truth beside the displayed status, data freshness, the affected workflow, the next step, and six risk gates."},
+ {"id":"s06","title":"Refusal","vo":"Here is a refusal. One case has no shift ID. Another's source is six hours old. The desk will not repair either one. It hands them to the on-call role, with context."},
+ {"id":"s07","title":"Approve","vo":"The operator approves one reversible re-sync. Evidence is read again first, and only shifts that pass every gate are written."},
+ {"id":"s08","title":"Retry and dead-letter queue","vo":"Every write carries an idempotency key. One shift recovers on retry. Another fails three times and moves to the dead-letter queue. Nothing is half applied."},
+ {"id":"s09","title":"Recovery","vo":"Verification fails while the queue is open. Once the simulated upstream recovers, replay applies the same key exactly once."},
+ {"id":"s10","title":"Verify and resolve","vo":"A fresh read now matches six of six, so the incident is resolved, and exported as a spec and a regression case."},
+ {"id":"s11","title":"Human handoffs","vo":"Billing, credential and trust cases are never auto-decided. They go to named specialist roles, and no money moves."},
+ {"id":"s12","title":"Close","vo":"Metrics here are illustrative synthetic counts, not claims about real results. Reset restores the sample at any time."}
+]

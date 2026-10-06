@@ -75,3 +75,5 @@ Fonts are bundled as WOFF2 files from the `@fontsource` packages, so the deploye
 
 - **Do:** keep the non-affiliation label next to every use of the logo, keep the footer credit "Concept by Ayo Ahmed", and label synthetic data everywhere.
 - **Don't:** imitate Clipboard's login, imply this is a Clipboard product, use real employee names, or reuse their photography or customer logos.
+
+**Accessibility adjustment (found by axe-core, see `docs/testing/accessibility.md`):** Clipboard burgundy `#CA3051` on the darker cream `#F0E9D9` is 4.00:1, which fails AA for 12 px eyebrow text. Small burgundy text uses a darker shade `#A82843` (5.43:1 on `#F0E9D9`). The logo and large surfaces keep `#CA3051`.

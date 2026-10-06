@@ -1,0 +1,9 @@
+empty state: 0 violations, 27 rules passed, 0 need review
+malformed import errors: 0 violations, 29 rules passed, 1 need review
+incident detail: 0 violations, 31 rules passed, 2 need review
+approval dialog: 0 violations, 14 rules passed, 1 need review
+dialog closes with Escape: true
+keyboard Tab reaches "Approve simulated re-sync": true
+Enter opens confirmation dialog: true
+focused element has visible outline: true (solid)
+TOTAL axe violations: 0
