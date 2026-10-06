@@ -9,7 +9,7 @@ tsc --noEmit: exit 0
 
 ## Unit + integration (Vitest)
 ```text
- RUN  v5.0.3 /home/ubuntu/repos/clipboard-ops-reliability-desk
+ RUN  v5.0.3 <repo>
  Test Files  2 passed (2)
       Tests  31 passed (31)
    Start at  00:28:00
@@ -74,8 +74,14 @@ PASS no console errors (CSP-clean)
 ```
 Screenshots: [`docs/evidence/e2e/`](../evidence/e2e/).
 
-## End-to-end, deployed
-**Not yet run: blocked.** No Cloudflare credentials are available in this environment (see the readiness report). When deployed, run `BASE_URL=<workers.dev URL> node scripts/e2e.mjs`.
+## End-to-end and accessibility, public GitHub Pages URL (actual)
+Target: https://cashpointsoulja.github.io/clipboard-ops-reliability-desk/ (anonymous, no sign-in). Run on 2026-10-06.
+
+- E2E: `16/16 passed`, no console errors (CSP-clean). Full log: [`e2e-pages-public.txt`](../evidence/logs/e2e-pages-public.txt).
+- Accessibility: `TOTAL axe violations: 0` across 4 states; Escape, Tab, Enter and the visible focus outline all pass. Full log: [`a11y-pages-public.txt`](../evidence/logs/a11y-pages-public.txt).
+- `GET /api/health` returns 404 on Pages, as expected: the static host has no Worker.
+- Ayo Ahmed ran the same checks independently: `npm run check` (31/31), public-URL E2E (16/16) and axe (0 violations).
+- No Cloudflare Worker deployment exists. The Worker results above are from local `wrangler dev` only.
 
 ## Accessibility
 See [accessibility.md](accessibility.md).
@@ -96,7 +102,7 @@ Manual review of the recorded walkthrough frames, local `wrangler dev`, 2026-10-
 | An earlier build showed post-repair values in the pre-repair evidence | **Found and fixed** (ADR-005, regression test added) |
 | "— old" freshness shown for a case with no shift | **Found and fixed**: now "n/a: no shift to read" |
 
-Deployed-URL anonymous checks are pending deployment (see below).
+Anonymous checks against the public Pages URL are recorded above.
 
 
 ## Static GitHub Pages build, local (actual)
@@ -108,4 +114,4 @@ These runs used `npm run build:pages`, served by `python3 -m http.server` under 
 - Asset paths: `styles.css`, `app.js`, `brand/…svg` and `fonts/…woff2` all returned 200 under the subpath.
 - The Worker build was re-run after the asset paths became relative: `16/16 passed` ([`e2e-local.txt`](../evidence/logs/e2e-local.txt)).
 
-Neither build has been checked at a public URL yet.
+The Pages build was later checked at the public URL (see above).

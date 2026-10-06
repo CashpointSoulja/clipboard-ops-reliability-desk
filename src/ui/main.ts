@@ -235,11 +235,16 @@ function audit() {
   </tbody></table></div></details></section>`;
 }
 
+const STATIC_HOST = document.querySelector('meta[name="hosting"]')?.getAttribute("content") === "static";
+const HOSTING = STATIC_HOST
+  ? "This copy is a static GitHub Pages site: there is no Worker, no server and no health endpoint. Pages serves the files as-is, and nothing leaves your browser."
+  : "The Cloudflare Worker only serves static files and a health check, and it stores nothing.";
+
 function about() {
   return `<section class="panel cream" aria-labelledby="h-about">
   <h2 id="h-about">How this demo is built</h2>
   <ul>
-    <li><strong>Browser-only state.</strong> Cases, incidents and the audit log live in this browser's localStorage. The Cloudflare Worker only serves static files and a health check, and it stores nothing. <em>Reset demo</em> clears everything.</li>
+    <li><strong>Browser-only state.</strong> Cases, incidents and the audit log live in this browser's localStorage. ${HOSTING} <em>Reset demo</em> clears everything.</li>
     <li><strong>Simulated connectors.</strong> The shift ledger, status projection, webhook log and write API are in-browser simulations with deterministic fault injection: one transient 503 on SH-2204 and a persistent 503 on SH-2206 until the fault is cleared.</li>
     <li><strong>Deterministic classification.</strong> A fixed lookup table maps symptom code → dependency → owner → playbook.</li>
     <li><strong>Optional AI adapter: specification only.</strong> The docs describe an interface for suggesting a symptom code for unmapped cases, with human confirmation required. Nothing is connected, and no model is called.</li>

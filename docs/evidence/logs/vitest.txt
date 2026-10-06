@@ -1,5 +1,5 @@
 
- RUN  v5.0.3 /home/ubuntu/repos/clipboard-ops-reliability-desk
+ RUN  v5.0.3 <repo>
 
 
  Test Files  2 passed (2)

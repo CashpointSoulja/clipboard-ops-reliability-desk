@@ -25,7 +25,11 @@ BASE_URL=http://127.0.0.1:8790/clipboard-ops-reliability-desk node scripts/a11y.
 
 The page is served under the same subpath GitHub Pages uses. That way a broken absolute path would fail the run.
 
-## Publishing (not done; it is the owner's decision)
+## Publishing
+
+This is live at https://cashpointsoulja.github.io/clipboard-ops-reliability-desk/ and was published by the owner. The Pages build adds `<meta name="hosting" content="static">`, so the in-app "How this demo is built" copy describes static hosting instead of the Worker.
+
+Steps, for reference:
 
 `.github/workflows/pages.yml` runs only on manual `workflow_dispatch`, so nothing publishes on push. To publish:
 

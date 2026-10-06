@@ -4,8 +4,8 @@
 
 **An independent audition concept by Ayo Ahmed** for Clipboard's *Strategy & Ops Lead, Applied AI* role. It is not affiliated with, endorsed by or connected to Clipboard, and it has no access to any Clipboard system. **All data is synthetic. All connectors are simulated. State is browser-only.**
 
-- **Live demo:** not yet published. Run locally with `npm run dev`, or see the [static GitHub Pages fallback](docs/deploy-github-pages.md)
-- **Walkthrough video (vertical, 1080×1920):** link to be added. Source script: [docs/video/script.md](docs/video/script.md)
+- **Live demo (static GitHub Pages):** https://cashpointsoulja.github.io/clipboard-ops-reliability-desk/
+- **Walkthrough video (vertical, 1080×1920):** https://drive.google.com/file/d/1Z42N5PxQlxQVR4y6oXb9ZD5xbwv7TKHv/view. Source script: [docs/video/script.md](docs/video/script.md)
 - **Docs (PM + technical package):** [docs/README.md](docs/README.md)
 - **Test results (actual output):** [docs/testing/test-results.md](docs/testing/test-results.md)
 
@@ -30,6 +30,8 @@ upload CSV → validate (row errors) → deterministic symptom cluster → inspe
 
 A static Cloudflare Worker (`src/worker.ts`) serves the app with a strict CSP and exposes `GET /api/health`. It stores nothing. The engine (`src/engine/`) is TypeScript that runs in the browser and saves to `localStorage`. See [ADR-001](docs/14-decision-log-adrs.md).
 
+**The live demo is the static build** (`npm run build:pages`), hosted on GitHub Pages. It has no Worker, no health endpoint and no response headers, only a `<meta>` CSP. All state stays in the browser. The Worker build is kept for local runs and an optional Cloudflare deploy. See [docs/deploy-github-pages.md](docs/deploy-github-pages.md).
+
 ```text
 src/engine/   csv.ts · schema.ts · rules.ts · sample.ts · desk.ts (state machine)
 src/ui/       main.ts (renderer + controls)
@@ -47,7 +49,8 @@ npm run check            # typecheck + 31 unit/integration tests + build
 npx wrangler dev         # http://localhost:8787
 CHROME_PATH=/path/to/chrome node scripts/e2e.mjs   # 16 browser checks (set BASE_URL to target another host)
 CHROME_PATH=/path/to/chrome node scripts/a11y.mjs  # axe-core WCAG A/AA
-npx wrangler deploy      # Cloudflare Workers free tier
+npm run build:pages      # static site in dist-pages/ (what the live demo serves)
+npx wrangler deploy      # optional: Cloudflare Workers free tier (not used for the live demo)
 ```
 
 ## Brand
