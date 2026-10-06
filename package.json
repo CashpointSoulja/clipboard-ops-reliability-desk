@@ -5,9 +5,24 @@
   "description": "Clipboard Ops Reliability Desk: independent concept by Ayo Ahmed (not affiliated with Clipboard). Synthetic data only.",
   "type": "module",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "esbuild src/ui/main.ts --bundle --format=esm --target=es2022 --minify --sourcemap=linked --outfile=public/app.js",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "node scripts/e2e.mjs",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
   "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261005.1",
     "@fontsource/lora": "^5.3.0",
-    "@fontsource/work-sans": "^5.3.0"
+    "@fontsource/work-sans": "^5.3.0",
+    "@types/node": "^26.6.4",
+    "esbuild": "^0.28.2",
+    "playwright-core": "^1.63.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.3",
+    "wrangler": "^4.147.0"
   }
 }

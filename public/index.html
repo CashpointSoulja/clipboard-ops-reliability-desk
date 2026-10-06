@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ops Reliability Desk · independent concept (not affiliated with Clipboard)</title>
+<meta name="description" content="Independent concept by Ayo Ahmed: turn duplicate support cases into one owned incident, gate a reversible simulated repair, and verify closure from fresh evidence. Synthetic data only. Not affiliated with Clipboard.">
+<link rel="icon" href="/brand/clipboard-logo-burgundy.svg">
+<link rel="preload" href="/fonts/lora-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/work-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="brand">
+    <img src="/brand/clipboard-logo-burgundy.svg" alt="Clipboard" width="111" height="32">
+    <span class="indep">Independent concept · not affiliated with Clipboard</span>
+  </div>
+  <div class="pname">Ops Reliability Desk</div>
+  <div class="controls">
+    <label class="role">Acting as
+      <select id="role" aria-label="Acting role">
+        <option value="operator">Ops Operator</option>
+        <option value="viewer">Viewer (read-only)</option>
+      </select>
+    </label>
+    <button class="btn o sm" data-action="reset" type="button">Reset demo</button>
+  </div>
+</header>
+<div class="banner" role="note"><strong>Synthetic data · Simulated connectors · Browser-only state.</strong> Nothing here touches a real Clipboard system. State is saved only in this browser's localStorage; the server stores nothing.</div>
+<main id="main" tabindex="-1"></main>
+<footer class="foot">
+  <p>Concept by Ayo Ahmed. Independent audition product, not affiliated with, endorsed by or connected to Clipboard. The Clipboard name and logo belong to their owner. All cases, IDs, roles and metrics are synthetic. <a href="https://github.com/CashpointSoulja/clipboard-ops-reliability-desk">Source and docs</a>.</p>
+</footer>
+<dialog id="confirm" aria-labelledby="confirm-title"></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="/app.js"></script>
+</body>
+</html>
