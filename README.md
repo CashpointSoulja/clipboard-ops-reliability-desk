@@ -4,8 +4,8 @@
 
 **An independent audition concept by Ayo Ahmed** for Clipboard's *Strategy & Ops Lead, Applied AI* role. It is not affiliated with, endorsed by or connected to Clipboard, and it has no access to any Clipboard system. **All data is synthetic. All connectors are simulated. State is browser-only.**
 
-- **Live demo:** LIVE_URL_PLACEHOLDER
-- **Walkthrough video (vertical, 1080×1920):** VIDEO_URL_PLACEHOLDER
+- **Live demo:** not yet published. Run locally with `npm run dev`, or see the [static GitHub Pages fallback](docs/deploy-github-pages.md)
+- **Walkthrough video (vertical, 1080×1920):** link to be added. Source script: [docs/video/script.md](docs/video/script.md)
 - **Docs (PM + technical package):** [docs/README.md](docs/README.md)
 - **Test results (actual output):** [docs/testing/test-results.md](docs/testing/test-results.md)
 

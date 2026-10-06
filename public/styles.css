@@ -1,8 +1,8 @@
-@font-face{font-family:Lora;font-weight:600;font-display:swap;src:url(/fonts/lora-latin-600-normal.woff2) format("woff2")}
-@font-face{font-family:Lora;font-weight:400;font-display:swap;src:url(/fonts/lora-latin-400-normal.woff2) format("woff2")}
-@font-face{font-family:"Work Sans";font-weight:400;font-display:swap;src:url(/fonts/work-sans-latin-400-normal.woff2) format("woff2")}
-@font-face{font-family:"Work Sans";font-weight:500;font-display:swap;src:url(/fonts/work-sans-latin-500-normal.woff2) format("woff2")}
-@font-face{font-family:"Work Sans";font-weight:600;font-display:swap;src:url(/fonts/work-sans-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Lora;font-weight:600;font-display:swap;src:url(fonts/lora-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Lora;font-weight:400;font-display:swap;src:url(fonts/lora-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Work Sans";font-weight:400;font-display:swap;src:url(fonts/work-sans-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Work Sans";font-weight:500;font-display:swap;src:url(fonts/work-sans-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Work Sans";font-weight:600;font-display:swap;src:url(fonts/work-sans-latin-600-normal.woff2) format("woff2")}
 :root{--cb-yellow:#FAFA64;--cb-yellow-soft:#FAF97B;--cb-burgundy:#CA3051;--cb-burgundy-text:#A82843;--cb-maroon:#37171A;--cb-ink:#1F2937;--cb-cream:#F0E9D9;--cb-cream-light:#F8F4EA;--cb-pink:#EBA8B6;--cb-blue:#3860BE;--cb-navy:#27455C;--cb-green:#468254;--cb-grey:#696969;--cb-line:#E1DED4;--r:14px}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}

@@ -6,3 +6,5 @@ test-results/
 playwright-report/
 /tmp/
 video-out/
+dist-pages/
+.pages-preview/

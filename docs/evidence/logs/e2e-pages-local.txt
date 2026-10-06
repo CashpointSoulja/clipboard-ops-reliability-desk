@@ -1,0 +1,18 @@
+E2E against http://127.0.0.1:8790/clipboard-ops-reliability-desk
+PASS landing shows non-affiliation and browser-only disclosure
+PASS malformed CSV shows actionable row errors and is not ingested
+PASS sample import forms owned incident queue
+PASS permission boundary: viewer cannot approve
+PASS evidence shows refusal for absent id and stale source
+PASS approve executes with retry and dead-letter queue
+PASS resolve blocked before verification passes
+PASS DLQ recovery after simulated upstream recovery
+PASS fresh-state verification then resolution
+PASS export spec and regression case downloads
+PASS out-of-order/duplicate webhook backlog does not regress state
+PASS sensitive cases are human handoffs, never auto-decided
+PASS state persists across reload (browser-only)
+PASS reset clears state
+PASS mobile 390px viewport has no horizontal overflow
+PASS no console errors (CSP-clean)
+16/16 passed

@@ -34,3 +34,5 @@ Clipboard Ops Reliability Desk is an **independent concept by Ayo Ahmed**. It is
 | 21 | [Viability memo](19-viability-memo.md) | Should this be built for real? | Opinion, labelled |
 | 22 | [v2 roadmap](20-v2-roadmap.md) | Next steps if validated | Plan |
 | 23 | [Walkthrough video script](video/script.md) | Scene-by-scene voiceover and subtitles | Source |
+
+- [Static GitHub Pages fallback](deploy-github-pages.md)

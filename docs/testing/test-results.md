@@ -97,3 +97,15 @@ Manual review of the recorded walkthrough frames, local `wrangler dev`, 2026-10-
 | "— old" freshness shown for a case with no shift | **Found and fixed**: now "n/a: no shift to read" |
 
 Deployed-URL anonymous checks are pending deployment (see below).
+
+
+## Static GitHub Pages build, local (actual)
+
+These runs used `npm run build:pages`, served by `python3 -m http.server` under the `/clipboard-ops-reliability-desk/` subpath, on 2026-10-06:
+
+- E2E: `16/16 passed`, no console errors (CSP-clean). Full log: [`e2e-pages-local.txt`](../evidence/logs/e2e-pages-local.txt).
+- Accessibility: `TOTAL axe violations: 0`; Escape, Tab, Enter and the visible focus outline all pass. Full log: [`a11y-pages-local.txt`](../evidence/logs/a11y-pages-local.txt).
+- Asset paths: `styles.css`, `app.js`, `brand/…svg` and `fonts/…woff2` all returned 200 under the subpath.
+- The Worker build was re-run after the asset paths became relative: `16/16 passed` ([`e2e-local.txt`](../evidence/logs/e2e-local.txt)).
+
+Neither build has been checked at a public URL yet.

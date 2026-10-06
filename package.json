@@ -12,7 +12,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:e2e": "node scripts/e2e.mjs",
-    "check": "npm run typecheck && npm test && npm run build"
+    "check": "npm run typecheck && npm test && npm run build",
+    "build:pages": "npm run build && node scripts/build-pages.mjs"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20261005.1",
